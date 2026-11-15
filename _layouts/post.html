@@ -1,0 +1,22 @@
+---
+layout: default
+---
+{%- assign words = content | strip_html | number_of_words -%}
+{%- assign mins = words | divided_by: 220 | plus: 1 -%}
+<a class="back" href="{{ '/' | relative_url }}">← Tất cả bài</a>
+<article>
+  <h1 class="post-title">{{ page.title }}</h1>
+  <div class="meta">
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d" }} tháng {{ page.date | date: "%-m" }}, {{ page.date | date: "%Y" }}</time>
+    · {{ mins }} phút đọc
+  </div>
+  <div class="prose">
+    {{ content }}
+  </div>
+</article>
+{% if page.previous or page.next %}
+<nav class="pager">
+  {% if page.previous %}<a href="{{ page.previous.url | relative_url }}"><small>← Bài cũ hơn</small><span>{{ page.previous.title }}</span></a>{% endif %}
+  {% if page.next %}<a class="next" href="{{ page.next.url | relative_url }}"><small>Bài mới hơn →</small><span>{{ page.next.title }}</span></a>{% endif %}
+</nav>
+{% endif %}

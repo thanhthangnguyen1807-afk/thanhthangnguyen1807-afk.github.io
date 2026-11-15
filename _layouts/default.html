@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'vi' }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% seo %}
+{% feed_meta %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body>
+<div class="wrap">
+  <header class="site-head">
+    <div class="brand">
+      <a href="{{ '/' | relative_url }}"><span class="name">{{ site.title }}</span></a>
+      {% if site.description %}<p>{{ site.description }}</p>{% endif %}
+    </div>
+  </header>
+  <main>
+    {{ content }}
+  </main>
+  <footer class="site-foot">
+    <span>{{ site.posts.size }} bài viết</span>
+    <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+  </footer>
+</div>
+</body>
+</html>
