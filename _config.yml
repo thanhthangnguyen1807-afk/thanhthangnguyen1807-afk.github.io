@@ -1,0 +1,21 @@
+# ===== Thông tin blog — sửa tuỳ ý =====
+title: Blog Thanh Thắng
+description: Viết linh tinh.
+author: Thanh Thắng
+
+# ===== Phần kỹ thuật — không cần đụng tới =====
+lang: vi
+locale: vi_VN
+timezone: Asia/Ho_Chi_Minh
+permalink: /bai/:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: true
+excerpt_separator: "\n\n"
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+exclude:
+  - HUONG-DAN.md
+  - README.md

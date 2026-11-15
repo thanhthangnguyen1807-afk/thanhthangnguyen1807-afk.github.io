@@ -1,0 +1,25 @@
+---
+layout: default
+---
+{% if site.posts.size == 0 %}
+<p class="note">Chưa có bài nào.</p>
+{% endif %}
+{%- assign prev_year = "" -%}
+{%- for post in site.posts -%}
+  {%- assign y = post.date | date: "%Y" -%}
+  {%- if y != prev_year -%}
+    {%- unless forloop.first %}</ol>{% endunless %}
+<h2 class="year">{{ y }}</h2>
+<ol class="posts">
+    {%- assign prev_year = y -%}
+  {%- endif %}
+  <li>
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m" }}</time>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    {%- assign ex = post.excerpt | strip_html | strip | truncatewords: 32, "…" -%}
+    {% if ex != "" %}<p>{{ ex }}</p>{% endif %}
+  </li>
+  {%- if forloop.last %}
+</ol>
+  {%- endif -%}
+{%- endfor %}
