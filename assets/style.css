@@ -1,7 +1,7 @@
 :root {
   /* Một cột chữ hẹp, căn trái; giao diện lùi lại để chữ lên tiếng. */
-  --bg: #f4f5f6;
-  --surface: #ffffff;
+  --bg: #ffffff;
+  --surface: #f6f7f8;
   --ink: #1c1e22;
   --muted: #687079;
   --line: #dfe2e6;
@@ -11,13 +11,6 @@
   --sans: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
   --measure: 40rem;
   color-scheme: light;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #131517; --surface: #1b1e21; --ink: #e5e7ea; --muted: #959ca5;
-    --line: #2b2f34; --accent: #7cc3ae; --accent-soft: #1d2d29;
-    color-scheme: dark;
-  }
 }
 
 * { box-sizing: border-box; }
